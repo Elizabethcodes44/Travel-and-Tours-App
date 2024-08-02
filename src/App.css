@@ -10,5 +10,8 @@
   min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
   display: grid;
   grid-template-rows: auto 1fr auto; 
-
+transition: 0.5s;
+}
+.app-Container.dark{
+background: #222;
 }

@@ -1,9 +1,9 @@
 import "./index.css";
 import "./App.css";
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { BrowserRouter as  Routes, Route } from 'react-router-dom';
 import Home from "./Components/Home/home";
-import Header from "./Components/header";
+import Header from "./Components/Header/header";
 import Footer from "./Components/footer";
 import Welcome from "./Components/Welcome";
 import Flights from "./Components/Home/flights";
@@ -15,14 +15,20 @@ export default function App() {
   const handleMoreButton = ()=>{
     setLandingPage(false);
   };
+  const currentTheme = localStorage.getItem('currentTheme');
+  const [theme, setTheme] = useState(currentTheme ? currentTheme : 'light');
+  useEffect(()=>{
+    localStorage.setItem('currentTheme', theme);
+
+  }, [theme])
   return (
     <>
-    <div className="app-Container">
+    <div className={`app-Container ${theme}`}>
     {landingPage ? (
       <Welcome onLearnMore = {handleMoreButton}></Welcome>
     ) : (
       <>
-      <Header></Header>
+      <Header theme={theme} setTheme={setTheme}></Header>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path= "/explore hotels" element= {<Hotels/>}></Route>
