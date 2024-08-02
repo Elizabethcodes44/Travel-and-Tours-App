@@ -1,4 +1,5 @@
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 import blackLogo from "/logolight.png";
 import whiteLogo from "/logo.png";
 import searchw from "/search-w.png";
@@ -15,10 +16,10 @@ export default function Header({theme, setTheme}) {
     <div className="navbar">
       <img src={theme == 'light' ? whiteLogo : blackLogo} alt="logo" className="logo" />
       <ul>
-        <li>Home</li>
-        <li>Home</li>
-        <li>Home</li>
-        <li>Home</li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/explore hotels">Hotels</Link></li>
+        <li><Link to="/explore flights">Flights</Link></li>
+        <li><Link to="/reviews">Reviews</Link></li>
       </ul>
       <div className="search-box">
         <input type="text" placeholder="Search"></input>
