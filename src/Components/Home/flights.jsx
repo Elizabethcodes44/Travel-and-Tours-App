@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import airplane from '/airplane.jpeg';
 export default function Flights() {
   const [flights, setFlights] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -63,18 +63,23 @@ export default function Flights() {
     fetchFlights();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className='text-3xl font-bold mt-6 text-center'>LOADING PAGE ...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h1>Available Flights</h1>
-      <div className="flights-container">
+    <div className="p-6  min-h-screen">
+      <h1 className="text-4xl font-bold mb-6 text-center">Flights</h1>
+      <div className="flex flex-wrap gap-6 justify-center">
         {flights.map((flight, index) => (
-          <div key={index} className="flight-card">
-            <p>{flight.price.currency}</p>
-            <p>{flight.price.base}</p>
-            <p>{flight.lastTicketingDateTime}</p>
+          <div key={index} className=" rounded-lg shadow-lg overflow-hidden w-full sm:w-80 md:w-96">
+            <img src={airplane} alt={flight.lastTicketingDateTime}  className="w-full h-48 object-cover"/>
+            <div className="p-4 border   rounded-lg ">
+            <p className="text-lg font-semibold text-gray-800 mb-2">{flight.price.currency} {flight.price.base}</p>
+            
+            <p className="text-sm text-gray-600 mb-4">{flight.lastTicketingDateTime}</p>
+            <button className="w-full bg-brown text-white py-2 px-4 rounded-md transition duration-200">Book Flight</button>
+            </div>
+           
           </div>
         ))}
       </div>

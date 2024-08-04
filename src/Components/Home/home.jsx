@@ -13,45 +13,42 @@ export default function Home() {
     }
   return (
     //https://booking-com.p.rapidapi.com/v1/hotels/search
-    <main>
-      <div className="">
-        <div>
-          <h2>
-            Welcome to Elizabeth's Travel App! Discover the world with ease and
-            comfort. Whether you're planning a weekend getaway or a month-long
-            adventure, we've got you covered. Book your stay in top hotels
-            across various locations, ensuring you find the perfect home away
-            from home.
+    <main className="flex flex-col justify-center items-center min-h-screen  ">
+      <div className="max-w-6xl w-full   p-6 mb-6">
+        
+          <h2 className="text-5xl mb-4">
+            Welcome to My Travel App! Discover the world with ease and
+            comfort. 
           </h2>
-          <p>
+          <p className="text-[15px]">
             Browse and book hotels in numerous destinations worldwide, with
             options ranging from budget-friendly stays to luxury resorts.
-          </p>
-          <p>
+         
             Create and customize your travel itinerary, including hotel
             bookings, flight details, and activities, all in one place.
-          </p>
-          <p>
+         
             Read user reviews and ratings to make informed decisions about
             hotels, tours, and attractions.
-          </p>
-          <p>
+         
             Get assistance anytime with our 24/7 customer support, ready to help
             with any questions or issues during your trip.
-          </p>
-          <p>
+         
             Search and book flights at competitive prices, ensuring your travel
             plans are seamless from start to finish.
           </p>
-        </div>
-        <div>
-          <div>
-            <img src={holliday} alt="vacation" />
-            <button onClick={handleHotelClick}>Explore Hotels</button>
+       
+        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col items-center text-center  p-4 rounded-lg shadow">
+            <img src={holliday} alt="vacation" className="w-full h-auto mb-4 rounded-lg" />
+            <button onClick={handleHotelClick}
+            className="bg-brown text-white px-4 py-2 rounded-md "
+            >Explore Hotels</button>
           </div>
-          <div>
-            <img src={flight} alt="flight" />
-            <button onClick={handleFlightsClick}>Explore Flights</button>
+          <div className="flex flex-col items-center text-center  p-4 rounded-lg shadow">
+            <img src={flight} alt="flight"
+            className="w-full h-auto mb-4 rounded-lg" />
+            <button onClick={handleFlightsClick}
+            className="bg-brown text-white px-4 py-2 rounded-md">Explore Flights</button>
           </div>
         </div>
       </div>

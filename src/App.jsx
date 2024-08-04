@@ -9,9 +9,10 @@ import Welcome from "./Components/Welcome";
 import Flights from "./Components/Home/flights";
 import Hotels from "./Components/Home/hotels";
 import Reviews from "./Components/Home/reviews";
+import Bookings from "./Components/Home/bookings";
 export default function App() {
   //usestate to toggle landingpage so that the other components can be dısplayed
-  const [landingPage, setLandingPage] = useState(true);
+  const [landingPage, setLandingPage] = useState( JSON.parse(localStorage.getItem("landingPage")) || true);
   //to handle landıng page button set it to false
   const handleMoreButton = () => {
     setLandingPage(false);
@@ -21,6 +22,9 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem("currentTheme", theme);
   }, [theme]);
+
+  
+  
   return (
     <Router>
       <div className={`app-Container ${theme}`}>
@@ -34,6 +38,7 @@ export default function App() {
               <Route path="/explore hotels" element={<Hotels />}></Route>
               <Route path="/explore flights" element={<Flights />}></Route>
               <Route path="/reviews" element={<Reviews />}></Route>
+              <Route path="/bookings" element={Bookings}></Route>
             </Routes>
             <Footer></Footer>
           </>

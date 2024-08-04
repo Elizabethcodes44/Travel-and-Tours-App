@@ -20,6 +20,7 @@ export default function Header({theme, setTheme}) {
         <li><Link to="/explore hotels">Hotels</Link></li>
         <li><Link to="/explore flights">Flights</Link></li>
         <li><Link to="/reviews">Reviews</Link></li>
+        <li><Link to="/bookings">Bookings</Link></li>
       </ul>
       <div className="search-box">
         <input type="text" placeholder="Search"></input>

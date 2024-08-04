@@ -53,21 +53,22 @@ export default function Hotels() {
     fetchHotels();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className='text-3xl font-bold mt-6 text-center'>LOADING PAGE ...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-      <h1>Available Hotels</h1>
-      <div className="hotel-list">
+    <div className='p-6'>
+      <h1 className='text-5xl mb-6 mt-4 font-bold text-center'>HOTELS</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {hotels.map((hotel, index) => (
-          <div key={index} className="hotel-card">
-            <img src={hotel.max_photo_url}/>
-            <h2>{hotel.hotel_name}</h2>
-            <p>{hotel.address}</p>
-            <p>Rating: {hotel.review_score}</p>
-            <p>Price: {hotel.min_total_price} {hotel.currency}</p>
-            <button>Book Hotel</button>
+          <div key={index} className="hotel-card p-4 border  shadow-md rounded-lg flex flex-col items-center">
+            <img src={hotel.max_photo_url}
+             alt={`${hotel.hotel_name}`}/>
+            <h2 className="text-xl font-bold mb-2">{hotel.hotel_name}</h2>
+            <p className=" mb-2">{hotel.address}</p>
+            <p className=" mb-2">Rating: {hotel.review_score}</p>
+            <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency}</p>
+            <button className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
           </div>
         ))}
       </div>

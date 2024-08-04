@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: white;
+   
     padding: 15px 7%;
     transition: 0.5s;
 }
@@ -31,7 +31,7 @@ ul li{
 .search-box {
     display: flex;
     align-items: center;
-    background: #242424;
+    background: black;
     padding: 10px 20px;
     border-radius: 50px;
 }
@@ -40,7 +40,7 @@ ul li{
     background: transparent;
     border: 0;
     outline: 0;
-    color: #fff;
+    color:white;
     font-size: 18px;
     max-width: 200px;
 }
@@ -59,8 +59,8 @@ ul li{
     background: white;
 }
 .dark .search-box input{
-    color: #222;
+    color: black;
 }
 .dark .search-box input::placeholder{
-    color: #222;
+    color: black;
 }

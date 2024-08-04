@@ -47,19 +47,23 @@ export default function Reviews() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
-    <h1>Hotel Reviews</h1>
-    <div className="review-list">
+    <div className="p-6  min-h-screen">
+    <h1 className="text-4xl font-bold mb-6 text-center">Hotel Reviews</h1>
+    <div className="space-y-6">
       {reviews.length === 0 ? (
-        <p>No reviews available.</p>
+        <p className="text-center ">No reviews available.</p>
       ) : (
         reviews.map((review, index) => (
-          <div key={index} className="review-card">
-            <img src={reviewImage} alt="Review" />
-            <h2>{review.hotelier_name || 'No Name Provided'}</h2>
-            
-            <p>Pros: {review.cons || 'No Pros Provided'}</p>
-            <p>Country Code: {review.countrycode || 'Not Available'}</p>
+          <div key={index} className=" p-4 rounded-lg shadow-md">
+            <div className="flex items-center space-x-4 mb-4">
+            <img src={reviewImage} alt="Review" className="w-16 h-16 object-cover rounded-full" />
+            <h2 className="text-xl font-semibold ">{review.hotelier_name || 'No Name Provided'}</h2>
+            </div>
+            <p className=" mb-2">
+            <span className="font-semibold">Pros:</span> </p>
+            <p className=" ">
+            <span className="font-semibold">Country Code:</span> {review.countrycode || 'Not Available'}
+            </p>
           </div>
         ))
       )}

@@ -1,8 +1,14 @@
 #root {
-  max-width: 1300px;
+  
   margin: 0 auto;
   
   
+}
+body{
+ 
+  background-color:#f7f6e7;
+  color:#681a1e;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .app-Container{
@@ -11,6 +17,7 @@
   display: grid;
   grid-template-rows: auto 1fr auto; 
 transition: 0.5s;
+
 }
 .app-Container.dark{
 background: #222;
