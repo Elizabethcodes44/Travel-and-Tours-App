@@ -3,7 +3,7 @@ import  { useState, useEffect } from 'react';
 // Define your API key as an environment variable
 const BOOKING_API_KEY = import.meta.env.VITE_BOOKING_API_KEY;
 
-export default function Hotels() {
+export default function Hotels({setAllHotels}) {
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -42,6 +42,7 @@ export default function Hotels() {
 
         const data = await response.json();
         setHotels(data.result); // Assuming 'result' contains the hotel list
+        setAllHotels(data.result);
         console.log(data)
       } catch (error) {
         setError(error.message);
@@ -51,7 +52,7 @@ export default function Hotels() {
     };
 
     fetchHotels();
-  }, []);
+  }, [setAllHotels]);
 
   if (loading) return <div className='text-3xl font-bold mt-6 text-center'>LOADING PAGE ...</div>;
   if (error) return <div>Error: {error}</div>;

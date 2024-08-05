@@ -10,6 +10,7 @@ import Flights from "./Components/Home/flights";
 import Hotels from "./Components/Home/hotels";
 import Reviews from "./Components/Home/reviews";
 import Bookings from "./Components/Home/bookings";
+import SearchResults from "./Components/Home/searchresults";
 export default function App() {
   //usestate to toggle landingpage so that the other components can be dısplayed
   const [landingPage, setLandingPage] = useState( JSON.parse(localStorage.getItem("landingPage")) || true);
@@ -17,6 +18,8 @@ export default function App() {
   const handleMoreButton = () => {
     setLandingPage(false);
   };
+  const [allHotels, setAllHotels] = useState([]);
+  const [allFlights, setAllFlights] = useState([]);
   const currentTheme = localStorage.getItem("currentTheme");
   const [theme, setTheme] = useState(currentTheme ? currentTheme : "light");
   useEffect(() => {
@@ -32,13 +35,14 @@ export default function App() {
           <Welcome onLearnMore={handleMoreButton}></Welcome>
         ) : (
           <>
-            <Header theme={theme} setTheme={setTheme}></Header>
+            <Header theme={theme} setTheme={setTheme} allHotels={allHotels} allFlights={allFlights}></Header>
             <Routes>
               <Route path="/" element={<Home />}></Route>
-              <Route path="/explore hotels" element={<Hotels />}></Route>
-              <Route path="/explore flights" element={<Flights />}></Route>
+              <Route path="/explore hotels" element={<Hotels setAllHotels={setAllHotels}/>}></Route>
+              <Route path="/explore flights" element={<Flights setAllFlights={setAllFlights}  />}></Route>
               <Route path="/reviews" element={<Reviews />}></Route>
               <Route path="/bookings" element={Bookings}></Route>
+              <Route path="/search-results" element={<SearchResults />} />
             </Routes>
             <Footer></Footer>
           </>

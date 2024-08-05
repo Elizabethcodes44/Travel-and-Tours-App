@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import airplane from '/airplane.jpeg';
-export default function Flights() {
+export default function Flights({setAllFlights}) {
   const [flights, setFlights] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
   const fetchFlights = async () => {
     try {
       // Fetch the access token
@@ -50,6 +51,7 @@ export default function Flights() {
 
       const flightsData = await flightsResponse.json();
       setFlights(flightsData.data);
+      setAllFlights(flightsData.data);
       console.log("Flights Data:", flightsData);
     } catch (error) {
       console.error("Error fetching flight data:", error);
@@ -59,9 +61,9 @@ export default function Flights() {
     }
   };
 
-  useEffect(() => {
+ 
     fetchFlights();
-  }, []);
+  }, [setAllFlights]);
 
   if (loading) return <div className='text-3xl font-bold mt-6 text-center'>LOADING PAGE ...</div>;
   if (error) return <div>Error: {error}</div>;
