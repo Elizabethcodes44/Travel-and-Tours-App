@@ -1,8 +1,8 @@
 import "./Navbar.css";
 import { Link, useNavigate,  } from "react-router-dom";
 import { useEffect, useState } from "react";
-import blackLogo from "/logolight.png";
-import whiteLogo from "/logo.png";
+import whiteLogo from "/logolight.png";
+import blackLogo from "/logo.png";
 import searchw from "/search-w.png";
 import searchb from "/search-b.png";
 import day from "/night.png";
@@ -43,7 +43,7 @@ export default function Header({theme, setTheme, allFlights, allHotels}) {
     <header>
     <div className="navbar">
       <img src={theme == 'light' ? whiteLogo : blackLogo} alt="logo" className="logo" />
-      <ul>
+      <ul className="font-bold">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/explore hotels">Hotels</Link></li>
         <li><Link to="/explore flights">Flights</Link></li>

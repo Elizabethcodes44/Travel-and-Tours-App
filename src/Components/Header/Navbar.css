@@ -6,6 +6,8 @@
    
     padding: 15px 7%;
     transition: 0.5s;
+   
+    background-color: #f7f6e7;
 }
 .logo{
     width: 100px;
@@ -31,7 +33,7 @@ ul li{
 .search-box {
     display: flex;
     align-items: center;
-    background: #681a1e;
+    background: #411900;
     padding: 10px 20px;
     border-radius: 50px;
 }
