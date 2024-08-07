@@ -6,33 +6,45 @@ const initialState = {
 }
 export default function BookingForm() {
     const [form , setForm] = useState(initialState);
+    const handleChange = (event) => {
+        const { name, type, value, checked } = event.target;
+        setForm({ ...form, [name]: type === "checkbox" ? checked : value });
+      };
+      const submitForm = async (event) => {
+        event.preventDefault() }
     return(
         <div>
-            <form>
-                <label> Name
+            <form onSubmit={submitForm}>
+                <label>  <span className="text-red-500">*</span>Name  </label>
                     <input
-                    name="text"
+                     onChange={handleChange}
+                    name="name"
+                    placeholder="Your Name"
+                    required
                     value={form.name}/>
-                </label>
-                <label>Email
-                    <input/>
-                </label>
-                <label>Phone No
-                    <input/>
-                </label>
                
-                <label> Check-in Date
+                <label> <span className="text-red-500">*</span>Email </label>
+                    <input
+                     onChange={handleChange}/>
+               
+                <label> <span className="text-red-500">*</span>Phone No  </label>
+                    <input
+                     onChange={handleChange}/>
+               
+               
+                <label> <span className="text-red-500">*</span>Check-in Date  </label>
+                    <input
+                     onChange={handleChange}/>
+               
+                <label> <span className="text-red-500">*</span>Check-out Date </label>
+                    <input  onChange={handleChange}/>
+               
+                <label> <span className="text-red-500">*</span>Number of Guests </label>
                     <input/>
-                </label>
-                <label>Check-out Date 
-                    <input/>
-                </label>
-                <label>Number of Guests
-                    <input/>
-                </label>
-                <label>Number of Rooms
-                    <input/>
-                </label>
+               
+                <label> <span className="text-red-500">*</span>Number of Rooms </label>
+                    <input  onChange={handleChange}/>
+               
                 <label>Room Type
                 <select id="" name="">
     <option value="">Select a room type</option>
@@ -50,10 +62,12 @@ export default function BookingForm() {
   </select>
                 </label>
                 <label>Special Request
-                    <textarea/>
+                    <textarea  onChange={handleChange}/>
                 </label>
 
 <input
+type = "submit"
+value = "BOOK ME"
 />
 
             </form>
