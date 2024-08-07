@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       colors:{
-        brown: '#681a1e'
+        brown: '#681a1e',
+        cream: '#f7f6e7',
       }
     },
   },

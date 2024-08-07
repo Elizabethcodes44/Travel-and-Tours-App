@@ -1,4 +1,5 @@
 import  { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Define your API key as an environment variable
 const BOOKING_API_KEY = import.meta.env.VITE_BOOKING_API_KEY;
@@ -7,7 +8,10 @@ export default function Hotels({setAllHotels}) {
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+const navigate = useNavigate()
+const handleClick = () => {
+navigate("/booking-Form");
+} 
   useEffect(() => {
     // Define the API endpoint and query parameters
     const fetchHotels = async () => {
@@ -69,7 +73,7 @@ export default function Hotels({setAllHotels}) {
             <p className=" mb-2">{hotel.address}</p>
             <p className=" mb-2">Rating: {hotel.review_score}</p>
             <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency}</p>
-            <button className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
+            <button onClick={handleClick} className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
           </div>
         ))}
       </div>

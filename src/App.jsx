@@ -2,6 +2,7 @@ import "./index.css";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import BookingForm from "./Components/Home/bookingForm";
 import Home from "./Components/Home/home";
 import Header from "./Components/Header/header";
 import Footer from "./Components/footer";
@@ -41,8 +42,9 @@ export default function App() {
               <Route path="/explore hotels" element={<Hotels setAllHotels={setAllHotels}/>}></Route>
               <Route path="/explore flights" element={<Flights setAllFlights={setAllFlights}  />}></Route>
               <Route path="/reviews" element={<Reviews />}></Route>
-              <Route path="/bookings" element={Bookings}></Route>
+              <Route path="/bookings" element={<Bookings/>}></Route>
               <Route path="/search-results" element={<SearchResults />} />
+              <Route path="/booking-Form" element={<BookingForm/>}></Route>
             </Routes>
             <Footer></Footer>
           </>

@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import airplane from '/airplane.jpeg';
+import { useNavigate } from "react-router-dom";
 export default function Flights({setAllFlights}) {
   const [flights, setFlights] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/booking-Form")
+  }
 
   useEffect(() => {
   const fetchFlights = async () => {
@@ -79,7 +84,7 @@ export default function Flights({setAllFlights}) {
             <p className="text-lg font-semibold text-gray-800 mb-2">{flight.price.currency} {flight.price.base}</p>
             
             <p className="text-sm text-gray-600 mb-4">{flight.lastTicketingDateTime}</p>
-            <button className="w-full bg-brown text-white py-2 px-4 rounded-md transition duration-200">Book Flight</button>
+            <button onClick={handleClick} className="w-full bg-brown text-white py-2 px-4 rounded-md transition duration-200">Book Flight</button>
             </div>
            
           </div>
