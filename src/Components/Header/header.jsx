@@ -43,8 +43,8 @@ export default function Header({theme, setTheme, allFlights, allHotels}) {
     <header>
     <div className="navbar">
       <img src={theme == 'light' ? whiteLogo : blackLogo} alt="logo" className="logo" />
-      <ul className="font-bold">
-        <li><Link to="/">Home</Link></li>
+      <ul className="font-bold ">
+        <li ><Link to="/" >Home</Link></li>
         <li><Link to="/explore hotels">Hotels</Link></li>
         <li><Link to="/explore flights">Flights</Link></li>
         <li><Link to="/reviews">Reviews</Link></li>

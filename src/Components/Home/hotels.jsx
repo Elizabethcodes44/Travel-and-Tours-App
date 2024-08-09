@@ -9,9 +9,7 @@ export default function Hotels({setAllHotels}) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 const navigate = useNavigate()
-const handleClick = () => {
-navigate("/booking-Form");
-} 
+
   useEffect(() => {
     // Define the API endpoint and query parameters
     const fetchHotels = async () => {
@@ -57,7 +55,10 @@ navigate("/booking-Form");
 
     fetchHotels();
   }, [setAllHotels]);
-
+  const handleClick = (hotel) => {
+    localStorage.setItem('selectedHotel', JSON.stringify(hotel)); // Save selected hotel data to local storage
+    navigate("/booking-Form");
+    } 
   if (loading) return <div className='text-3xl font-bold mt-6 text-center'>LOADING PAGE ...</div>;
   if (error) return <div>Error: {error}</div>;
 
@@ -73,7 +74,7 @@ navigate("/booking-Form");
             <p className=" mb-2">{hotel.address}</p>
             <p className=" mb-2">Rating: {hotel.review_score} <span></span>/ 10</p>
             <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency}</p>
-            <button onClick={handleClick} className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
+            <button onClick={() => handleClick(hotel)} className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
           </div>
         ))}
       </div>
