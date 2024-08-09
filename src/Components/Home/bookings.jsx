@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+const deleteBooking =  2
 export default function Bookings(){
   const [bookings, setBookings] = useState([]);
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function Bookings(){
       <h2>Your Bookings</h2>
       {bookings.length > 0 ? (
         bookings.map((booking, index) => (
-          <div key={index} className="p-4 border m-2 rounded">
+          <div key={index} className="p-4  m-2 ">
             <h3>Booking {index + 1}</h3>
             <p>Name: {booking.name}</p>
             <p>Email: {booking.email}</p>
@@ -31,8 +31,8 @@ export default function Bookings(){
                 <p>Address: {booking.hotel.address}</p>
                 <p>Rating: {booking.hotel.review_score}/10</p>
                 <p>Price: {booking.hotel.min_total_price} {booking.hotel.currency}</p>
-                <button>DELETE</button>
-                <button>EDIT</button>
+                <button className="bg-brown text-[15px] rounded-xl text-white h-[40px] w-[150px]"onClick= {deleteBooking}>DELETE</button>
+                <button className="bg-brown text-[15px] ml-4 rounded-xl text-white h-[40px] w-[150px]">EDIT</button>
               </div>
             )}
           </div>
