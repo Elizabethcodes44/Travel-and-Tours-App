@@ -71,7 +71,7 @@ navigate("/booking-Form");
              alt={`${hotel.hotel_name}`}/>
             <h2 className="text-xl font-bold mb-2">{hotel.hotel_name}</h2>
             <p className=" mb-2">{hotel.address}</p>
-            <p className=" mb-2">Rating: {hotel.review_score}</p>
+            <p className=" mb-2">Rating: {hotel.review_score} <span></span>/ 10</p>
             <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency}</p>
             <button onClick={handleClick} className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
           </div>

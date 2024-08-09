@@ -6,7 +6,10 @@
    
     padding: 15px 7%;
     transition: 0.5s;
-   
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
     background-color: #f7f6e7;
 }
 .logo{
@@ -54,7 +57,7 @@ ul li{
     cursor: pointer;
 }
 .dark .navbar{
-    background:#000;
+    background:#181818;
     color:white;
 }
 .dark .search-box{

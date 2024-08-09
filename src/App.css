@@ -9,7 +9,10 @@ body{
   background-color:#f7f6e7;
   color:#411900;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  padding-top: 100px;
 }
 
 .app-Container{

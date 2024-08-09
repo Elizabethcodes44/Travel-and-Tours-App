@@ -1,8 +1,10 @@
 import Video from "/Welcomevideo.mp4";
+import Header from "./Header/header";
 export default function Welcome({onLearnMore}){
     return(
         
         <div className= "relative w-full h-screen overflow-hidden" >
+            <Header></Header>
             <video autoPlay loop muted className="absolute top-0 left-0 w-full h-full object-cover z-0" >
             <source src={Video} type="video/mp4"/>
             Your browser does not support the video tag.
