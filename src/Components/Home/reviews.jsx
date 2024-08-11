@@ -62,7 +62,15 @@ export default function Reviews() {
             <h2 className="text-xl font-semibold ">{review.hotelier_name || 'No Name Provided'}</h2>
             </div>
             <p className=" mb-2">
-            <span className="font-semibold">Pros:</span> </p>
+            <span className="font-semibold">Pros: {review.pros}</span> </p>
+            <p className=" mb-2">
+            <span className="font-semibold">Cons: {review.cons}</span> </p>
+            <p className=" mb-2">
+            <span className="font-semibold">{review.date}</span> </p>
+            <p className=" mb-2">
+            <span className="font-semibold">Average Score: {review.average_score}</span> </p>
+            <p className=" mb-2">
+            <span className="font-semibold">Travel Purpose: {review.travel_purpose}</span> </p>
             <p className=" ">
             <span className="font-semibold">Country Code:</span> {review.countrycode || 'Not Available'}
             </p>
