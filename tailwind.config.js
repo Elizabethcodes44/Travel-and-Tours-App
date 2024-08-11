@@ -10,6 +10,7 @@ export default {
       colors:{
         brown: '#411900',
         cream: '#f7f6e7',
+        darkgrey: '#111827',
       }
     },
   },

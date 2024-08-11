@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import whiteLogo from "/logolight.png";
 import blackLogo from "/logo.png";
 import searchw from "/search-w.png";
-import searchb from "/search-b.png";
+import searchb from "/search-w.png";
 import day from "/night.png";
 import night from "/day.png";
-export default function Header({theme, setTheme, allFlights, allHotels}) {
+import {useTheme} from "../Home/Theme";
+export default function Header({ allFlights, allHotels}) {
+  const {theme, toggleTheme} = useTheme();
   const [query, setQuery] = useState('');
   const [filteredHotels, setFilteredHotels] = useState([]);
   const [filteredFlights, setFilteredFlights] = useState([]);
@@ -35,13 +37,11 @@ export default function Header({theme, setTheme, allFlights, allHotels}) {
     navigate('/search-results', {state: {hotels: filteredHotels, flights: filteredFlights}});
   };
 
-  const toggleMode = () => {
-    theme == 'light'? setTheme('dark') : setTheme('light');
-  };
+  
   
   return (
     <header>
-    <div className="navbar">
+    <div className={`navbar ${theme === 'light' ? 'bg-cream' : 'bg-black'}`}>
       <img src={theme == 'light' ? whiteLogo : blackLogo} alt="logo" className="logo" />
       <ul className="font-bold ">
         <li ><Link to="/" >Home</Link></li>
@@ -50,7 +50,7 @@ export default function Header({theme, setTheme, allFlights, allHotels}) {
         <li><Link to="/reviews">Reviews</Link></li>
         <li><Link to="/bookings">Bookings</Link></li>
       </ul>
-      <form onSubmit={handleSearch} className="search-box flex items-center space-x-2">
+      <form onSubmit={handleSearch} className={`search-box flex items-center space-x-2 ${theme === 'light' ? 'bg-brown text-white' : 'bg-gray-800 text-white'}`}>
           <input
             type="text"
             value={query}
@@ -60,7 +60,7 @@ export default function Header({theme, setTheme, allFlights, allHotels}) {
           />
           <img src={theme === 'light' ? searchw : searchb} alt="search-icon" />
         </form>
-      <img onClick={()=>{toggleMode()}} src={theme == 'light' ? day : night} alt="toggleicon" className="toggle-icon"/>
+      <img onClick={()=>{toggleTheme()}} src={theme == 'light' ? day : night} alt="toggleicon" className="toggle-icon"/>
     </div>
     </header>
   );

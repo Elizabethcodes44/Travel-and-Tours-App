@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import {useTheme} from "./Theme";
 const initialState = {
   name: "",
   email: " ",
@@ -21,6 +22,7 @@ export default function BookingForm(onBookingSubmit) {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
   };
+  const {theme} = useTheme();
   const submitForm = async (event) => {
     event.preventDefault();
     const bookingDetails = {
@@ -39,7 +41,7 @@ export default function BookingForm(onBookingSubmit) {
   return (
     <div className="w-[1200px] p-6  mt-10 justify-center items-center ">
         <h2 className="text-center text-5xl">Booking Form </h2>
-      <form onSubmit={submitForm} className="space-y-4">
+      <form onSubmit={submitForm} className={`space-y-4`}>
         <div>
           <label className="block font-semibold">
             {" "}
@@ -51,7 +53,7 @@ export default function BookingForm(onBookingSubmit) {
             placeholder="Your Name"
             required
             value={form.name}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           />
         </div>
         <div>
@@ -66,7 +68,7 @@ export default function BookingForm(onBookingSubmit) {
             placeholder="Your Email"
             required
             value={form.email}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           />
         </div>
         <div>
@@ -80,7 +82,7 @@ export default function BookingForm(onBookingSubmit) {
             required
             value={form.phone}
             type="tel"
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           />
         </div>
         <div>
@@ -94,7 +96,7 @@ export default function BookingForm(onBookingSubmit) {
             type="date"
             required
             value={form.checkInDate}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           />
         </div>
         <div>
@@ -107,7 +109,7 @@ export default function BookingForm(onBookingSubmit) {
             name="checkOutDate"
             value={form.checkOutDate}
             required
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
             type="date"
           />
         </div>
@@ -123,7 +125,7 @@ export default function BookingForm(onBookingSubmit) {
             placeholder="Number of Guests"
             required
             value={form.guests}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           />
         </div>
         <div>
@@ -138,7 +140,7 @@ export default function BookingForm(onBookingSubmit) {
             placeholder="Number of Rooms"
             required
             value={form.rooms}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           />
         </div>
         <div>
@@ -147,7 +149,7 @@ export default function BookingForm(onBookingSubmit) {
             onChange={handleChange}
             name="roomType"
             value={form.roomType}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           >
             <option value="">Select a room type</option>
             <option value="Suite">Suite</option>
@@ -161,7 +163,7 @@ export default function BookingForm(onBookingSubmit) {
             onChange={handleChange}
             name="bedType"
             value={form.bedType}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
           >
             <option value="">Select a Bed Type</option>
             <option value="King Size">King Size</option>
@@ -176,7 +178,7 @@ export default function BookingForm(onBookingSubmit) {
             name="specialRequest"
             placeholder="Any special requests?"
             value={form.specialRequest}
-            className="w-full p-2 border rounded"
+            className={`${theme === 'light' ? 'text-brown':'text-black'} w-full p-2 border rounded`}
             rows="5"
           />
         </div>
@@ -185,7 +187,7 @@ export default function BookingForm(onBookingSubmit) {
         
             type="submit"
             value="BOOK ME"
-            className="w-[200px] p-2 bg-brown text-white font-semibold rounded cursor-pointer "
+            className= {` ${theme === 'light' ? 'bg-brown' : 'bg-gray-800'} w-[200px] p-2 bg-brown text-white font-semibold rounded cursor-pointer `}
           />
         </div>
       </form>

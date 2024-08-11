@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import flight from "/flights.png";
-
+import {useTheme} from "./Theme";
 
 import holliday from "/hotelimage.png";
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
     const handleFlightsClick= () => {
       navigate('explore flights')
     }
+    const {theme} = useTheme();
   return (
     //https://booking-com.p.rapidapi.com/v1/hotels/search
     <main className="flex flex-col justify-center items-center min-h-screen  mt-10 ">
@@ -42,14 +43,14 @@ export default function Home() {
           <div className="flex flex-col items-center text-center  p-4 rounded-lg shadow">
             <img src={holliday} alt="vacation" className="w-full h-auto mb-4 rounded-lg" />
             <button onClick={handleHotelClick}
-            className="bg-brown mt-5 text-white px-4 py-2 rounded-md "
+            className={`${theme === 'light'? 'bg-brown' : 'bg-gray-800'}  text-white px-4 py-2 rounded-md mt-5`}
             >Explore Hotels</button>
           </div>
           <div className="flex flex-col items-center text-center  p-4 rounded-lg shadow">
             <img src={flight} alt="flight"
             className="w-full h-auto mb-4 rounded-lg" />
             <button onClick={handleFlightsClick}
-            className="bg-brown text-white px-4 py-2 rounded-md mt-5">Explore Flights</button>
+            className={`${theme === 'light'? 'bg-brown' : 'bg-gray-800'}  text-white px-4 py-2 rounded-md mt-5`}>Explore Flights</button>
           </div>
         </div>
       </div>

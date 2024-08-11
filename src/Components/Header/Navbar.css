@@ -10,7 +10,7 @@
     width: 100%;
     z-index: 9999;
     top: 0;
-    background-color: #f7f6e7;
+    
 }
 .logo{
     width: 100px;
@@ -36,7 +36,7 @@ ul li{
 .search-box {
     display: flex;
     align-items: center;
-    background: #411900;
+    
     padding: 10px 20px;
     border-radius: 50px;
 }
@@ -57,15 +57,15 @@ ul li{
     cursor: pointer;
 }
 .dark .navbar{
-    background:#181818;
+    background-color: #1a1a1a;
     color:white;
 }
 .dark .search-box{
-    background: white;
+    background: #333333;;
 }
 .dark .search-box input{
-    color: black;
+    color: white;
 }
 .dark .search-box input::placeholder{
-    color: black;
+    color: #ccc;
 }

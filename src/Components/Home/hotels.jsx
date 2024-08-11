@@ -1,10 +1,12 @@
 import  { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {useTheme} from './Theme';
 
 // Define your API key as an environment variable
 const BOOKING_API_KEY = import.meta.env.VITE_BOOKING_API_KEY;
 
 export default function Hotels({setAllHotels}) {
+  const {theme} = useTheme();
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -63,8 +65,8 @@ const navigate = useNavigate()
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className='p-6'>
-      <h1 className='text-5xl mb-6 mt-4 font-bold text-center'>HOTELS</h1>
+    <div className='p-6 mt-6'>
+      <h1 className='text-5xl mb-6  font-bold text-center'>HOTELS</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
         {hotels.map((hotel, index) => (
           <div key={index} className="hotel-card p-4 border  shadow-md rounded-lg flex h-[550px] flex-col items-center">
@@ -74,7 +76,7 @@ const navigate = useNavigate()
             <p className=" mb-2">{hotel.address}</p>
             <p className=" mb-2">Rating: {hotel.review_score} <span></span>/ 10</p>
             <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency_code}</p>
-            <button onClick={() => handleClick(hotel)} className="bg-brown text-white px-4 py-2 rounded-md mt-4">Book Hotel</button>
+            <button onClick={() => handleClick(hotel)} className={`${theme === 'light' ? 'bg-brown': 'bg-gray-800'}  text-white px-4 py-2 rounded-md mt-4`}>Book Hotel</button>
           </div>
         ))}
       </div>

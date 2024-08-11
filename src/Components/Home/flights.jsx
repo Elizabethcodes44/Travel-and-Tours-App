@@ -74,7 +74,7 @@ export default function Flights({setAllFlights}) {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="p-6  min-h-screen">
+    <div className="p-6  min-h-screen mt-6">
       <h1 className="text-5xl font-bold mb-6 text-center">Flights</h1>
       <div className="flex flex-wrap gap-6 justify-center">
         {flights.map((flight, index) => (

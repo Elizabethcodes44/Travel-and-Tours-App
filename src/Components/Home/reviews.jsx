@@ -1,5 +1,6 @@
 import  { useState, useEffect } from 'react';
 import reviewImage from "/reviews.png";
+//import {useTheme} from './Theme';
 
 // Define your API key as an environment variable
 const BOOKING_API_KEY = import.meta.env.VITE_BOOKING_API_KEY;
@@ -48,7 +49,7 @@ export default function Reviews() {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <div className="p-6  min-h-screen">
+    <div className="p-6  mt-6 min-h-screen">
      
     <h1 className="text-4xl font-bold mb-6 text-center">Hotel Reviews</h1>
     <div className="space-y-6">
