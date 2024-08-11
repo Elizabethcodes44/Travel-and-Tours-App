@@ -75,16 +75,19 @@ export default function Flights({setAllFlights}) {
 
   return (
     <div className="p-6  min-h-screen">
-      <h1 className="text-4xl font-bold mb-6 text-center">Flights</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center">Flights</h1>
       <div className="flex flex-wrap gap-6 justify-center">
         {flights.map((flight, index) => (
           <div key={index} className=" rounded-lg shadow-lg overflow-hidden w-full sm:w-80 md:w-96">
             <img src={airplane} alt={flight.lastTicketingDateTime}  className="w-full h-48 object-cover"/>
             <div className="p-4 border   rounded-lg ">
-            <p className="text-lg font-semibold text-gray-800 mb-2">{flight.price.currency} {flight.price.base}</p>
+            <p className="text-[20px] font-semibold ">Airline Code: {flight.validatingAirlineCodes}</p>
+              <p className="text-[15px] mt-2 ">Available seats: {flight.numberOfBookableSeats}</p>
+              <p className="text-[15px] mt-2 ">Checked Bags: {flight.pricingOptions.includedCheckedBagsOnly || "Check with customer service"} </p>
+            <p className="text-[15px] mt-2 ">{flight.price.currency} {flight.price.base}</p>
             
-            <p className="text-sm text-gray-600 mb-4">{flight.lastTicketingDateTime}</p>
-            <button onClick={handleClick} className="w-full bg-brown text-white py-2 px-4 rounded-md transition duration-200">Book Flight</button>
+            <p className="text-[15px] mt-2 ">{flight.lastTicketingDateTime}</p>
+            <button onClick={handleClick} className="w-full bg-brown text-white py-2 px-4 mt-4 rounded-md ">Book Flight</button>
             </div>
            
           </div>
