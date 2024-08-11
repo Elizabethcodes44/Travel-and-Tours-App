@@ -14,7 +14,7 @@ export default function Welcome({onLearnMore}){
                 <h1 className="text-7xl font-bold">Welcome to </h1>
                 <h1 className="text-7xl mt-2 font-bold">My </h1>
                 <h3 className="text-7xl mt-2 font-bold">Travel App</h3>
-                <button onClick={onLearnMore}  className="mt-8 px-6 py-3 bg-brown text-2xl text-white font-bold rounded ">Learn More</button>
+                <button onClick={onLearnMore}  className="mt-8 px-6 py-3 bg-brown text-2xl text-white font-bold rounded-md ">Click Here</button>
             </div>
         </div>
         

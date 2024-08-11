@@ -65,16 +65,16 @@ const navigate = useNavigate()
   return (
     <div className='p-6'>
       <h1 className='text-5xl mb-6 mt-4 font-bold text-center'>HOTELS</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
         {hotels.map((hotel, index) => (
-          <div key={index} className="hotel-card p-4 border  shadow-md rounded-lg flex flex-col items-center">
+          <div key={index} className="hotel-card p-4 border  shadow-md rounded-lg flex h-[550px] flex-col items-center">
             <img src={hotel.max_photo_url}
              alt={`${hotel.hotel_name}`}/>
-            <h2 className="text-xl font-bold mb-2">{hotel.hotel_name}</h2>
+            <h2 className="text-xl font-bold mb-2 mt-4">{hotel.hotel_name}</h2>
             <p className=" mb-2">{hotel.address}</p>
             <p className=" mb-2">Rating: {hotel.review_score} <span></span>/ 10</p>
-            <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency}</p>
-            <button onClick={() => handleClick(hotel)} className="bg-brown text-white px-4 py-2 rounded-md">Book Hotel</button>
+            <p className=" mb-4">Price: {hotel.min_total_price} {hotel.currency_code}</p>
+            <button onClick={() => handleClick(hotel)} className="bg-brown text-white px-4 py-2 rounded-md mt-4">Book Hotel</button>
           </div>
         ))}
       </div>
