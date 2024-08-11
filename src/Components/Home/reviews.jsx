@@ -1,6 +1,6 @@
 import  { useState, useEffect } from 'react';
 import reviewImage from "/reviews.png";
-//import {useTheme} from './Theme';
+
 
 // Define your API key as an environment variable
 const BOOKING_API_KEY = import.meta.env.VITE_BOOKING_API_KEY;
@@ -9,7 +9,7 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
     // Define the API endpoint and query parameters
     const fetchReviews = async () => {
@@ -45,7 +45,7 @@ export default function Reviews() {
     fetchReviews();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div>LOADING PAGE ...</div>;
   if (error) return <div>Error: {error}</div>;
 
   return (
