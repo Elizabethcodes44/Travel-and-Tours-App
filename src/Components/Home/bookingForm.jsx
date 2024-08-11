@@ -38,7 +38,7 @@ export default function BookingForm(onBookingSubmit) {
   
   return (
     <div className="w-[1200px] p-6  mt-10 justify-center items-center ">
-        <h2>Booking Form for {form.hotel?.hotel_name || "Selected Hotel"}</h2>
+        <h2 className="text-center text-5xl">Booking Form </h2>
       <form onSubmit={submitForm} className="space-y-4">
         <div>
           <label className="block font-semibold">
