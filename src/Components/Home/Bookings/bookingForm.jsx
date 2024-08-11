@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {  useNavigate } from "react-router-dom";
-import {useTheme} from "./Theme";
+import {useTheme} from "../Theme";
 const initialState = {
   name: "",
   email: " ",

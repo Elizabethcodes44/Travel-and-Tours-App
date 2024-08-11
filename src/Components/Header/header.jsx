@@ -3,10 +3,10 @@ import { Link, useNavigate,  } from "react-router-dom";
 import { useEffect, useState } from "react";
 import whiteLogo from "/logolight.png";
 import blackLogo from "/logo.png";
-import searchw from "/search-w.png";
-import searchb from "/search-w.png";
-import day from "/night.png";
-import night from "/day.png";
+import searchw from "../../assets/search-w.png";
+import searchb from "../../assets/search-w.png";
+import day from "../../assets/night.png";
+import night from "../../assets/day.png";
 import {useTheme} from "../Home/Theme";
 export default function Header({ allFlights, allHotels}) {
   const {theme, toggleTheme} = useTheme();

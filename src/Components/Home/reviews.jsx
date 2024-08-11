@@ -1,5 +1,5 @@
 import  { useState, useEffect } from 'react';
-import reviewImage from "/reviews.png";
+import reviewImage from "../../assets/reviews.png";
 
 
 // Define your API key as an environment variable

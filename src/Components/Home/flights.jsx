@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import airplane from '/airplane.jpeg';
+import airplane from '../../assets/airplane.jpeg';
 import { useNavigate } from "react-router-dom";
 export default function Flights({setAllFlights}) {
   const [flights, setFlights] = useState([]);

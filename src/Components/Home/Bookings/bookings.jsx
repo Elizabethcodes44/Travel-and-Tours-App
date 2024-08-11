@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "./Theme";
+import { useTheme } from "../Theme";
 
 export default function Bookings() {
   const [bookings, setBookings] = useState([]);

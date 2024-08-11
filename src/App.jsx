@@ -1,16 +1,16 @@
 import "./index.css";
 import "./App.css";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import BookingForm from "./Components/Home/bookingForm";
+import BookingForm from "./Components/Home/Bookings/bookingForm"
 import Home from "./Components/Home/home";
 import Header from "./Components/Header/header";
-import Footer from "./Components/footer";
-import Welcome from "./Components/Welcome";
+import Footer from "./Components/Footer/footer";
+import Welcome from "./Components/Landingpage/Welcome";
 import Flights from "./Components/Home/flights";
 import Hotels from "./Components/Home/hotels";
 import Reviews from "./Components/Home/reviews";
-import Bookings from "./Components/Home/bookings";
+import Bookings from "./Components/Home/Bookings/bookings";
 import SearchResults from "./Components/Home/searchresults";
 import ThemeProvider from "./Components/Home/Theme";
 export default function App() {

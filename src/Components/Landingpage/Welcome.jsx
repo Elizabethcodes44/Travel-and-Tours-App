@@ -1,5 +1,5 @@
-import Video from "/Welcomevideo.mp4";
-import Header from "./Header/header";
+import Video from "../../assets/Welcomevideo.mp4";
+import Header from "../Header/header";
 export default function Welcome({onLearnMore}){
     return(
         

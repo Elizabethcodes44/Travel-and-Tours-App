@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import flight from "/flights.png";
+import flight from "../../assets/flights.png";
 import {useTheme} from "./Theme";
 
-import holliday from "/hotelimage.png";
+import holliday from "../../assets/hotelimage.png";
 export default function Home() {
   //to navigate to the lıst of hotels
   const navigate = useNavigate();

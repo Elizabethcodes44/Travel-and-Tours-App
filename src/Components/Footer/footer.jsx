@@ -1,10 +1,10 @@
-import twitter from "/twitter.png";
-import facebook from "/facebook.png";
-import instagram from "/instagram.png";
-import location from "/location.png";
-import message from "/message.png";
-import phone from "/phone.png";
-import {useTheme} from "./Home/Theme";
+import twitter from "../../assets/twitter.png";
+import facebook from "../../assets/facebook.png";
+import instagram from "../../assets/instagram.png";
+import location from "../../assets/location.png";
+import message from "../../assets/message.png";
+import phone from "../../assets/phone.png";
+import {useTheme} from "../Home/Theme";
 export default function Footer() {
   const {theme} = useTheme();
   return (
